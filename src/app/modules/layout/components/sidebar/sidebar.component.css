@@ -1,0 +1,12 @@
+.crsName{
+    background: linear-gradient(90deg, #F54900 0%, #E17100 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 21px; /* 150% */
+margin-top: 8.5px;
+}

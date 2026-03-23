@@ -1,0 +1,6 @@
+.leftBorder{
+    border-radius: 22369600px;
+background: linear-gradient(180deg, #FF8904 0%, #FFB900 50%, #FDC700 100%);
+box-shadow: 0 10px 15px -3px rgba(255, 137, 4, 0.40), 0 4px 6px -4px rgba(255, 137, 4, 0.40);
+margin-right: 14px;
+}
