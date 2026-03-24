@@ -1,0 +1,296 @@
+
+<div
+  class="border-solid border-[#ffd6a8] border-b-[0.67px] pb-[0.67px] self-stretch shrink-0 h-[67px] relative"
+  style="
+    background: linear-gradient(
+      90deg,
+      rgba(255, 247, 237, 1) 0%,
+      rgba(255, 251, 235, 1) 50%,
+      rgba(255, 247, 237, 1) 100%
+    );
+  "
+>
+  <div
+    class="p-0 flex flex-row items-center justify-between w-[941px] h-[19px] absolute left-[21px] top-[21px]"
+  >
+    <div class="shrink-0 w-[145.47px] h-3.5 relative">
+      <div
+        class="text-[#7e2a0c] text-left text-sm leading-[14px] font-medium absolute left-0 top-[-0.67px]"
+      >
+        7-Day Rainfall Forecast
+      </div>
+    </div>
+    <div
+      class="flex flex-row gap-[7px] items-start justify-start shrink-0 w-[110.71px] h-[18.83px] relative"
+    >
+      <div
+        class="flex flex-row gap-[7px] items-start justify-start shrink-0 w-[110.71px] h-[18.83px] relative"
+      >
+        <div
+          class="rounded-[5px] border-solid border-[#ffb86a] border-[0.67px] pt-[1.75px]  pb-[1.75px]  flex flex-row gap-[3.5px] items-center justify-center shrink-0 w-[56.71px] h-[18.83px] relative overflow-hidden"
+        >
+          <div
+            class="text-[#0a0a0a] text-left font-['Inter-Medium',_sans-serif] text-[10.5px] leading-[14px] font-medium relative"
+          >
+            IMD GFS
+          </div>
+        </div>
+        <div
+          class="rounded-[5px] border-solid border-[#ffb86a] border-[0.67px] pt-[1.75px]  pb-[1.75px]  flex flex-row gap-[3.5px] items-center justify-center shrink-0 w-[47px] h-[18.83px] relative overflow-hidden"
+        >
+          <div
+            class="text-[#0a0a0a] text-left font-['Inter-Medium',_sans-serif] text-[10.5px] leading-[14px] font-medium relative"
+          >
+            NCUM
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg-icon class="w-7 h-7 absolute left-[980px] top-[17px] overflow-visible"
+    style="aspect-ratio: 1"
+    src="assets/icons/Information--Streamline-Carbon 1.svg"></svg-icon>
+
+</div>
+
+<div
+  class="pr-[21.1px] pb-7 w-full flex flex-col items-start justify-between shrink-0 h-[478px] relative"
+>
+  <div
+    class="rounded-2xl border-solid border-[rgba(202,213,226,0.23)] border-2 p-0.5 shrink-0 w-full h-[403px] relative overflow-hidden"
+    style="box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.05)"
+  >
+  <div [class.map-maximize]="isMaximized" 
+     class="rounded-2xl border-2 h-[403px] w-full relative overflow-hidden">
+  
+ <app-cm-map #mapComponent> </app-cm-map>
+ </div>
+    <div
+      class="bg-[rgba(251,44,54,0.20)] rounded-[22369600px] border-solid border-[rgba(251,44,54,0.50)] border-[0.67px] flex flex-col gap-0 items-center justify-center w-[41.33px] h-[41.33px] absolute left-[366px] top-[104px] z-1000"
+    >
+      
+      <svg-icon src="assets/icons/highTemp.svg" ></svg-icon>
+
+    </div>
+    <div
+      class="bg-[rgba(251,44,54,0.30)] rounded-[22369600px] w-16 h-16 absolute left-[357px] top-[93px] "
+      style="filter: blur(12px)"
+    ></div>
+    <div class="w-[33.33px] h-[33.33px] absolute left-[573.16px] top-[200px]">
+      <div
+        class="bg-[rgba(254,154,0,0.20)] rounded-[22369600px] border-solid border-[rgba(254,154,0,0.50)] border-[0.67px] flex flex-col gap-0 items-center justify-center w-[33.33px] h-[33.33px] absolute left-0 top-0 z-1000"
+      >
+        <svg-icon src="assets/icons/locationOrange.svg"> </svg-icon>
+      </div>
+      <div
+        class="bg-[rgba(254,154,0,0.15)] rounded-[22369600px] w-32 h-32 z-1000 absolute left-[-64px] top-[-64px]"
+        style="opacity: 0.5; filter: blur(40px)"
+      ></div>
+    </div>
+    <div
+      class="flex flex-col gap-3 items-center justify-center w-[54px] h-[218px] absolute left-[867px] top-[149px]"
+    >
+      <div
+        class="bg-[rgba(255,255,255,0.90)] rounded-[14px] border-solid border-[#cad5e2] border pt-1 pb-1 pl-1 flex flex-col gap-1 items-start justify-start flex-1 w-[54px] relative z-1000"
+        style="
+          box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+            0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div
+          class="rounded-[10px] flex flex-col gap-0 items-center justify-center shrink-0 w-11 h-11 relative" (click)="mapComponent.resetView()"
+        >
+         
+          <svg-icon src="assets/icons/refresh.svg"></svg-icon>
+        </div>
+        <div class="bg-[#cad5e2] shrink-0 w-11 h-px relative"></div>
+        <div
+          class="rounded-[10px]  flex flex-col gap-0 items-center justify-center shrink-0 w-11 h-11 relative" (click)="mapComponent.zoomIn()"
+        >
+           <svg-icon src="assets/icons/zoomIn.svg"></svg-icon>
+        </div>
+        <div class="bg-[#cad5e2] shrink-0 w-11 h-px relative"></div>
+        <div
+          class="rounded-[10px] flex flex-col gap-0 items-center justify-center flex-1 w-11 relative" (click)="mapComponent.zoomOut()"
+        >
+           <svg-icon src="assets/icons/zoomOut.svg"></svg-icon>
+        </div>
+      </div>
+      <div
+        class="bg-[rgba(255,255,255,0.90)] rounded-[14px] border-solid border-[#cad5e2] border flex flex-col gap-0 items-center justify-center shrink-0 w-[54px] h-[46px] relative z-1000"
+        style="
+          box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+            0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        "(click)="mapComponent.toggleFullscreen()"
+      >
+         <svg-icon src="assets/icons/maximize.svg"></svg-icon>
+      </div>
+    </div>
+    <div
+      class="bg-[rgba(255,255,255,0.95)] rounded-[7px] border-solid border-[#e2e8f0] border-[0.67px] pt-[11.17px] pr-[11.17px] pb-[0.67px] pl-[11.17px] flex flex-col gap-[7px] items-start justify-start w-[110px] h-[115.08px] absolute left-[25px] top-[252px] z-1000"
+      style="
+        box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div
+        class="flex flex-row gap-0 items-start justify-start self-stretch shrink-0 h-3.5 relative"
+      >
+        <div
+          class="text-[#314158] text-left font-['Inter-SemiBold',_sans-serif] text-[10.5px] leading-[14px] font-semibold relative"
+        >
+          Severity Levels
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-[5.25px] items-start justify-start self-stretch shrink-0 h-[71.75px] relative"
+      >
+        <div
+          class="flex flex-row gap-[7px] items-center justify-start self-stretch shrink-0 h-3.5 relative"
+        >
+          <div
+            class="bg-[#22c55e] rounded-[22369600px] shrink-0 w-[8.75px] h-[8.75px] relative"
+          ></div>
+          <div
+            class="flex flex-row gap-0 items-start justify-start shrink-0 w-[34.59px] h-3.5 relative"
+          >
+            <div
+              class="text-[#45556c] text-left font-['Inter-Regular',_sans-serif] text-[10.5px] leading-[14px] font-normal relative"
+            >
+              Normal
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-row gap-[7px] items-center justify-start self-stretch shrink-0 h-3.5 relative"
+        >
+          <div
+            class="bg-[#ef4444] rounded-[22369600px] shrink-0 w-[8.75px] h-[8.75px] relative"
+          ></div>
+          <div
+            class="flex flex-row gap-0 items-start justify-start shrink-0 w-[15.19px] h-3.5 relative"
+          >
+            <div
+              class="text-[#45556c] text-left font-['Inter-Regular',_sans-serif] text-[10.5px] leading-[14px] font-normal relative"
+            >
+              Act
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-row gap-[7px] items-center justify-start self-stretch shrink-0 h-3.5 relative"
+        >
+          <div
+            class="bg-[#f97316] rounded-[22369600px] shrink-0 w-[8.75px] h-[8.75px] relative"
+          ></div>
+          <div
+            class="flex flex-row gap-0 items-start justify-start shrink-0 w-[47.21px] h-3.5 relative"
+          >
+            <div
+              class="text-[#45556c] text-left font-['Inter-Regular',_sans-serif] text-[10.5px] leading-[14px] font-normal relative"
+            >
+              Ready
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-row gap-[7px] items-center justify-start self-stretch shrink-0 h-3.5 relative"
+        >
+          <div
+            class="bg-[#eab308] rounded-[22369600px] shrink-0 w-[8.75px] h-[8.75px] relative"
+          ></div>
+          <div
+            class="flex flex-row gap-0 items-start justify-start shrink-0 w-[29.09px] h-3.5 relative"
+          >
+            <div
+              class="text-[#45556c] text-left font-['Inter-Regular',_sans-serif] text-[10.5px] leading-[14px] font-normal relative"
+            >
+              Watch
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="rounded-tr-xl rounded-br-xl flex flex-row gap-0 items-center justify-start shrink-0 w-[956px] relative"
+  >
+    <div
+      class="bg-[#ffffff] rounded-tl-xl rounded-bl-xl border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-row gap-0 items-center justify-center shrink-0 w-[159px] relative"
+    >
+      <div
+        class="text-[#90a1b9] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative"
+        style="transform-origin: 0 0; transform: rotate(0deg) scale(1, 1)"
+      >
+        Rainfall (mm)
+      </div>
+    </div>
+    <div
+      class="bg-[#fb2c36] border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-row gap-0 items-center justify-center shrink-0 w-40 relative"
+    >
+      <div
+        class="text-[#ffffff] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative"
+        style="transform-origin: 0 0; transform: rotate(0deg) scale(1, 1)"
+      >
+        &gt;2045
+      </div>
+    </div>
+    <div
+      class="bg-[#ff6900] border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-row gap-0 items-center justify-center shrink-0 w-[159px] relative"
+    >
+      <div
+        class="text-[#ffffff] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative"
+        style="
+          opacity: 0.6;
+          transform-origin: 0 0;
+          transform: rotate(0deg) scale(1, 1);
+        "
+      >
+        115.6 - 204.4
+      </div>
+    </div>
+    <div
+      class="bg-[#ffb900] border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-row gap-0 items-center justify-center shrink-0 w-[159px] relative"
+    >
+      <div
+        class="text-[#ffffff] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative"
+        style="
+          opacity: 0.6;
+          transform-origin: 0 0;
+          transform: rotate(0deg) scale(1, 1);
+        "
+      >
+        64.5 - 115.5
+      </div>
+    </div>
+    <div
+      class="bg-[#00c950] border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-row gap-0 items-center justify-center shrink-0 w-40 relative"
+    >
+      <div
+        class="text-[#ffffff] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative"
+        style="
+          opacity: 0.6;
+          transform-origin: 0 0;
+          transform: rotate(0deg) scale(1, 1);
+        "
+      >
+        01 - 64.4
+      </div>
+    </div>
+    <div
+      class="bg-[#ffffff] rounded-tr-xl rounded-br-xl border-solid border-[rgba(144,161,185,0.24)] border pt-[5px] pr-2.5 pb-[5px] pl-2.5 flex flex-col gap-0 items-center justify-center shrink-0 w-[159px] relative"
+    >
+      <div
+        class="text-[#62748e] text-center font-['Inter-Medium',_sans-serif] text-[10px] leading-[14px] font-medium relative self-stretch"
+        style="
+          opacity: 0.6;
+          transform-origin: 0 0;
+          transform: rotate(0deg) scale(1, 1);
+        "
+      >
+        0
+      </div>
+    </div>
+  </div>
+</div>
+

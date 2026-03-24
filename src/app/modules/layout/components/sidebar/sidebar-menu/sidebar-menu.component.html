@@ -15,12 +15,12 @@
           <div
             (click)="toggleMenu(item)"
         [ngClass]="{
-          'hover:bg-primary/10': !menuService.showSideBar && item.active,
+          'activeMenu text-white': item.active,
           'hover:bg-card/50': !menuService.showSideBar
         }"
-            class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2">
+            class="h-14 px-3.5 rounded-2xl inline-flex justify-start items-center gap-2.5 w-full">
             <!-- Icon -->
-            <div [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'">
+            <div [ngClass]="item.active && !menuService.showSideBar ? 'text-white' : 'w-8 h-8 px-1.5 pt-1.5 bg-orange-50 rounded-xl inline-flex flex-col justify-start items-start'">
               <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
             </div>
             <!-- Condition -->
@@ -35,7 +35,7 @@
                 class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm">
                 <a
                   [ngClass]="{ hidden: !menuService.showSideBar }"
-                  routerLinkActive="text-primary"
+                  routerLinkActive="text-white"
                   class="truncate text-xs font-semibold tracking-wide focus:outline-hidden">
                   {{ item.label }}
                 </a>

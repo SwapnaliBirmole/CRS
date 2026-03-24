@@ -1,0 +1,20 @@
+::ng-deep .mat-mdc-tab {height: 28px!important;}
+::ng-deep .mdc-tab-indicator--active .mdc-tab-indicator__content {
+    opacity: 0!important;
+}
+
+::ng-deep .mdc-tab--active{border-radius: 11px!important;
+border: 0.667px solid rgba(0, 0, 0, 0.00)!important;
+background-color: var(--color-white)!important;
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10)!important;}
+
+::ng-deep app-cm-map, ::ng-deep app-map-card {
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+::ng-deep .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}

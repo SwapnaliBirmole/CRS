@@ -7,10 +7,28 @@ export class Menu {
       separator: false,
       items: [
         {
-          icon: 'assets/icons/heroicons/outline/chart-pie.svg',
-          label: 'Dashboard',
-          route: '/dashboard/nfts',
-          // children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
+          icon: 'assets/icons/weather.svg',
+          label: 'Weather Forecasts',
+          route: '/dashboard/weather',
+          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
+        },
+         {
+          icon: 'assets/icons/analytics.svg',
+          label: 'Analytics',
+          route: '/dashboard/analytics',
+          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
+        },
+         {
+          icon: 'assets/icons/ai.svg',
+          label: 'AI Assistant',
+          route: '/dashboard/ai',
+          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
+        },
+         {
+          icon: 'assets/icons/alerts.svg',
+          label: 'Alerts',
+          route: '/dashboard/alerts',
+          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
         },
         // {
         //   icon: 'assets/icons/heroicons/outline/lock-closed.svg',

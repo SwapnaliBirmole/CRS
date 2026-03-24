@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  height: 100%; /* Important: allows the map div to fill the 403px container */
+}
+::ng-deep app-cm-map, ::ng-deep app-map-card {
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+::ng-deep .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}

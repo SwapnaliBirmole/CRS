@@ -1,0 +1,43 @@
+<mat-tab-group class="text-sm font-medium text-center text-body sm:flex -space-x-px bg-slate-100 rounded-xl" animationDuration="0ms" dynamicHeight>
+  <mat-tab >
+    <ng-template mat-tab-label class="w-full focus-within:z-10 h-8 bg-neutral-primary-soft border border-default rounded-s-base">
+        <span  class="inline-flex items-center justify-center w-full text-body  hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-secondary-strong font-medium leading-5 text-sm px-4 h-8 focus:outline-none gap-2 active">
+           <svg-icon src="assets/icons/rainfall.svg"></svg-icon>
+            Profile
+        </span>
+   </ng-template>
+
+
+   <ng-template matTabContent>
+   <div class="p-2"> <app-map-card #mapCard></app-map-card></div>
+    </ng-template>
+ </mat-tab>
+  <mat-tab >  <ng-template mat-tab-label class="w-full focus-within:z-10 h-8 bg-neutral-primary-soft border border-default rounded-s-base">
+        <span  class="inline-flex items-center justify-center w-full text-body  hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-secondary-strong font-medium leading-5 text-sm px-4 h-8 focus:outline-none gap-2" >
+           <svg-icon src="assets/icons/heat.svg"></svg-icon>
+            Heat Stress
+        </span>
+   </ng-template>
+ <ng-template matTabContent>
+      Content 2 - Loaded: 
+    </ng-template>
+ </mat-tab>
+  <mat-tab >  <ng-template mat-tab-label class="w-full focus-within:z-10 h-8 bg-neutral-primary-soft border border-default rounded-s-base">
+        <span  class="inline-flex items-center justify-center w-full text-body  hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-secondary-strong font-medium leading-5 text-sm px-4 h-8 focus:outline-none gap-2">
+           <svg-icon src="assets/icons/flood.svg"></svg-icon>
+            Flood Risk
+        </span>
+   </ng-template>
+ <ng-template matTabContent>
+      Content 3 - Loaded: 
+    </ng-template></mat-tab>
+  <mat-tab >  <ng-template mat-tab-label class="w-full focus-within:z-10 h-8 bg-neutral-primary-soft border border-default rounded-s-base">
+        <span  class="inline-flex items-center justify-center w-full text-body  hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-secondary-strong font-medium leading-5 text-sm px-4 h-8 focus:outline-none gap-2">
+           <svg-icon src="assets/icons/air.svg"></svg-icon>
+            Air Quality
+        </span>
+   </ng-template>
+ <ng-template matTabContent>
+      Content 4 - Loaded: 
+    </ng-template></mat-tab>
+</mat-tab-group>

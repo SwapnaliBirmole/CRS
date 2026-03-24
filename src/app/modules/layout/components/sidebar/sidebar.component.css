@@ -10,3 +10,9 @@ font-weight: 700;
 line-height: 21px; /* 150% */
 margin-top: 8.5px;
 }
+nav{
+    max-width: 280px;
+    border-right: 0.667px solid rgba(255, 237, 212, 0.50);
+background: rgba(255, 255, 255, 0.90);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.10), 0 8px 10px -6px rgba(0, 0, 0, 0.10);
+}

@@ -1,0 +1,25 @@
+::ng-deep .mat-mdc-tab {height: 28px!important;}
+::ng-deep .mdc-tab-indicator--active .mdc-tab-indicator__content {
+    opacity: 0;
+}
+
+::ng-deep .mdc-tab--active{border-radius: 11px;
+border: 0.667px solid rgba(0, 0, 0, 0.00);
+background-color: var(--color-white);
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);}
+
+:host {
+  display: block;
+  height: 100%; /* Important: allows the map div to fill the 403px container */
+}
+
+::ng-deep app-cm-map, ::ng-deep app-map-card {
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+::ng-deep .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}
