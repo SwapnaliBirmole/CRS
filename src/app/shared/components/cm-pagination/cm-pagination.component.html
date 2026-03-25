@@ -1,0 +1,5 @@
+<div class="row">
+    <mat-paginator [length]="totalRecords" [pageSize]="recordsPerPage" [pageIndex]="pageIndex"
+        [pageSizeOptions]="[2,3,5, 10, 25, 100]" aria-label="Select page" (page)="onPageChange($event)">
+    </mat-paginator>
+</div>

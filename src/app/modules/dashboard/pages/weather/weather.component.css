@@ -23,3 +23,178 @@ box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
   height: 100% !important;
   width: 100% !important;
 }
+
+tbody,
+tbody * {
+    box-sizing: border-box;
+}
+
+
+tr {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.08);
+    border-width: 0px 0px 0.67px 0px;
+    padding: 0px 0px 0.67px 0px;
+
+}
+
+
+
+.badge {
+    background: #030213;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.00);
+    border-width: 0.67px;
+    padding: 0.67px;
+    width: 38.24px;
+    height: 18.83px;
+    position: absolute;
+    left: 0px;
+    top: 16.54px;
+    overflow: hidden;
+}
+
+.high {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 10.5px;
+    line-height: 14px;
+    font-weight: 500;
+    position: absolute;
+    left: 7.67px;
+    top: 1.42px;
+}
+
+
+.button {
+    background: #fafafa;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.08);
+    border-width: 0.67px;
+    padding: 0.67px;
+    width: 90.31px;
+    height: 28px;
+    position: absolute;
+    left: 0px;
+    top: 10.83px;
+}
+
+.view-details {
+    color: #0a0a0a;
+    text-align: center;
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 12.25px;
+    line-height: 17.5px;
+    font-weight: 500;
+    position: absolute;
+    left: 9.17px;
+    top: 4.25px;
+}
+
+  /* 
+  CSS to style a standard <table> or mat-table 
+  to match the "Ward List View" design.
+*/
+
+:root {
+  --status-critical: #dc3545;
+  --status-high: #000000;
+  --status-medium: #f8f9fa;
+  --status-low: #f8f9fa;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+}
+
+/* Container & Table Reset */
+.ward-table-container {
+  width: 100%;
+}
+
+table, .mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Mobile-First: Transform rows into cards */
+tr, .mat-row {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+}
+
+
+/* Row 1: Title & Icon */
+.cell-location {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  gap: 8px;
+}
+
+.cell-location svg {
+  color: var(--text-muted);
+}
+
+/* Row 2: Stats & Action */
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.measurement {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* Status Badges */
+.badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-critical { background-color: var(--status-critical); color: white; }
+.badge-high { background-color: var(--status-high); color: white; }
+.badge-medium { background-color: var(--status-medium); color: var(--text-main); border: 1px solid var(--border-color); }
+.badge-low { background-color: var(--status-low); color: var(--text-main); border: 1px solid var(--border-color); }
+
+/* Time */
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Action Button */
+.btn-view {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-view:hover {
+  background: #f8f9fa;
+}

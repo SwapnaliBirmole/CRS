@@ -1,0 +1,240 @@
+.table-dark th {
+    color: black !important; 
+  }
+  .clickable-header {
+  cursor: pointer;
+  user-select: none;
+}
+.clickable-header:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+table td:first-child {text-align: center;}
+table thead tr th:first-child {text-align: center;}
+table thead tr th{text-align: left;}
+table td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0px 5px;
+     max-width: 150px;      /* set your limit */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+th.status-col,
+td.status-col {
+  width: 130px;
+  min-width: 130px;
+  max-width: 130px;
+}
+  /* Makes the search box smaller to fit inside the header */
+::ng-deep .compact-header-search .mat-mdc-text-field-wrapper {
+  height: 28px !important;
+  padding: 0 8px !important;
+  font-size: 11px !important;
+}
+
+::ng-deep .compact-header-search .mat-mdc-form-field-subscript-wrapper {
+  display: none; /* Hides the bottom padding used for error messages */
+}
+/* Container for the whole header cell content */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px;
+  min-width: 120px;
+}
+
+/* Row containing Title and Search Icon */
+.title-row {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+}
+
+.header-text {
+  white-space: nowrap;
+}
+
+.sort-icon {
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  margin-left: 4px;
+}
+
+/* Small search toggle button */
+.search-trigger {
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+}
+
+.search-trigger mat-icon {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8); /* Adjust based on your header background */
+}
+
+/* Sleek Search Input */
+.search-input-container {
+  margin-top: 4px;
+  animation: slideDown 0.2s ease-out;
+}
+
+.custom-search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15); /* Slightly lighter than header */
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 12px;
+  padding: 4px 6px;
+  outline: none;
+  border-radius: 2px;
+}
+
+.custom-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure the input text doesn't look squished */
+.compact-header-search input {
+  margin-top: -10px;
+}
+  table th{
+    vertical-align: middle;
+    padding: 2px 5px;
+    white-space: nowrap;
+    text-transform: capitalize;
+  }
+  table td:last-child {width: 140px;}
+  .table-dark {
+    
+    color: white !important;
+  }
+  mat-label{font-size: 16px; font-weight: 500; margin-bottom: 15px; color:#4C535F}
+
+ 
+ ::ng-deep .mat-mdc-text-field-wrapper  {
+  --mdc-filled-text-field-container-color: #EDF2F6!important;
+ border-radius: 8px!important;
+border: 1px solid #E0E4EC;
+background-color:#EDF2F6;
+ }
+
+ ::ng-deep .mat-paginator .mat-form-field, .mat-mdc-paginator-page-size-select {
+  appearance: none; 
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 8px 0 0 !important;
+  border: none !important;
+}
+
+::ng-deep .mat-paginator .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-paginator .mat-form-field-underline,
+::ng-deep .mat-paginator .mat-form-field-outline {
+  display: none !important;
+}
+
+::ng-deep .mat-paginator .mat-select-trigger {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 4px 8px;
+  background-color: transparent !important;
+}
+
+.td-css{
+  border-spacing: 0cap;
+}
+
+.table thead {
+  --bs-table-bg:transparent;
+  --bs-table-color:#fff;
+}
+.bg-blue{
+  background-color: var(--primary-color);
+  color:#fff;
+}
+.table{margin-bottom: 0;}
+.table-responsive{overflow-y: hidden;}
+::ng-deep .mat-icon{
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    font-size: 18px;
+}
+.target {
+color: #fff;
+}
+.closeIcon{
+padding: 0!important;
+margin-left: 5px;
+color: #fff;
+}
+.target:hover, .closeIcon:hover {
+color: turquoise;
+cursor: pointer;
+}
+.searchDiv{
+  position: absolute;
+  width: 260px;
+  height: 32px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  right: 0px;
+  top:1px;
+  background-color: var(--primary-color);
+
+}
+
+::ng-deep.searchDiv .mat-mdc-form-field-infix {
+      --mat-form-field-container-height: 24px;
+    min-height: var(--mat-form-field-container-height);
+}
+::ng-deep .searchDiv .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  --mdc-filled-text-field-container-color:#66ccff!important;
+    background-color: var(--mdc-filled-text-field-container-color);
+    border: 1px solid #a2e0ff;
+}
+::ng-deep .searchDiv .mat-mdc-text-field-wrapper{
+  --mdc-filled-text-field-container-color:#66ccff!important;
+    background-color: var(--mdc-filled-text-field-container-color);
+    border: 1px solid #a2e0ff;
+}
+
+tr {
+border-style: solid;
+border-color: rgba(0, 0, 0, 0.08);
+border-width: 0px 0px 0.67px 0px;
+padding: 0px 0px 0.67px 0px;
+height: 49px;
+
+}
+::ng-deep .mat-mdc-card {background-color: var(--white);}
+.shadow-none{box-shadow: none!important;}
+.view-details {
+color: #0a0a0a;
+text-align: center;
+font-family: 'Inter-Medium', sans-serif;
+font-size: 12.25px;
+line-height: 17.5px;
+font-weight: 500;
+background: #fafafa;
+border-radius: 5px;
+border-style: solid;
+border-color: rgba(0, 0, 0, 0.08);
+border-width: 0.67px;
+padding: 0.67px;
+width: 90.31px;
+height: 28px;
+}

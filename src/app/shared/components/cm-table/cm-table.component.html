@@ -1,0 +1,204 @@
+<mat-card class="p-0 shadow-none rounded-top-3">
+  <mat-card-content class="p-0 bg-white">
+    <!-- <mat-card-title>{{ _headerName }}</mat-card-title>
+    <hr /> -->
+    <div class="table-responsive" *ngIf="headArr">
+
+      <ng-template #searchTemplate>
+       
+                    <mat-form-field style="width: 310px;margin-bottom: 5px;"><mat-icon matPrefix class="text-primary">search</mat-icon><input matInput placeholder="Search here..." [(ngModel)]="searchText" (keyup)="Search()" class="w-100 bg-transperant"></mat-form-field> 
+             
+             <!-- <mat-icon class="closeIcon" (click)="showSearch = false">close</mat-icon> -->
+</ng-template>
+              
+      <!-- {{activePage}} -->
+      <!-- <table class="w-100 table table-bordered table-striped" id="datatableexample" (mouseenter)="showSearchIcon = true" (mouseleave)="showSearchIcon = false" > -->
+
+        <table class="w-full table-auto w-100 bg-white" id="datatableexample">
+        <thead class="text-xs uppercase text-muted-foreground">
+          
+          <tr>
+            <th width="80" style="width: 80px !important;min-width: 80px !important;max-width: 80px !important;" class="rounded-top-3 rounded-end-0" >
+              <div class="d-flex justify-content-center items-center gap-2">
+              <mat-icon class="target" fontSet="material-icons-outlined" *ngIf="showSearchIcon" (click)="showSearch = true"
+              >search</mat-icon> <span>Sr No.</span>
+            </div></th>
+            <!-- <th class="f-w-600 f-s-14" 
+    *ngFor="let col of headArr" 
+    (click)="col.sorting ? sortData(col.fieldValue) : null"
+    [style.cursor]="col.sorting ? 'pointer' : 'default'">
+  
+  <div class="d-flex align-items-center">
+    {{ col.header }}
+
+    <mat-icon *ngIf="col.sorting" 
+              style="font-size: 18px; height: 18px; width: 18px; margin-left: 5px; vertical-align: middle;">
+      @if (currentSortField === col.fieldValue) {
+        {{ sortDirection ? 'expand_less' : 'expand_more' }}
+      } @else {
+        unfold_more
+      }
+    </mat-icon>
+  </div>
+</th> -->
+            <th class="f-w-600 f-s-14" *ngFor="let col of headArr;let last = last" [style.cursor]="col.sorting ? 'pointer' : 'default'" [ngClass]="{ 'status-col': col.header === 'Status' }" style="max-width:45%;width: 45%;" [style.min-width]="col.header === 'Alert Date' ? '170px' : 'auto'" [ngClass]="{
+      'rounded-top-3': last,
+      'rounded-start-0': last
+    }">
+
+              <div class="header-container">
+                <div class="title-row">
+                  <div class="d-flex align-items-center" (click)="col.sorting ? sortData(col.fieldValue) : null">
+                    <span class="header-text">{{ col.header }}</span>
+
+                    <mat-icon *ngIf="col.sorting" class="sort-icon">
+                      @if (currentSortField === col.fieldValue) {
+                      {{ sortDirection ? 'expand_less' : 'expand_more' }}
+                      } @else {
+                      unfold_more
+                      }
+                    </mat-icon>
+                  </div>
+
+                  <button mat-icon-button *ngIf="col.searchRequired" class="search-trigger"
+                    (click)="$event.stopPropagation(); col.showSearch ? clearSearch(col) : col.showSearch = !col.showSearch">
+                    <mat-icon>{{ col.showSearch ? 'close' : 'search' }}</mat-icon>
+                  </button>
+                </div>
+
+                <div *ngIf="col.searchRequired && col.showSearch" class="search-input-container"
+                  (click)="$event.stopPropagation()">
+                  <input type="text" class="custom-search-input" placeholder="Search {{col.header}}..."
+                    [(ngModel)]="col.searchValue" (keyup)="filterData()" autoFocus>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of gridArr; let sr = index" (click)="ShowForm(item)" class="text-center">
+            <td class="td-css">
+              {{ ((activePage * perPage)) + sr + 1 }}
+            </td>
+
+            <td *ngFor="let head of headArr" [ngClass]="{
+  'wrap-text': head.fieldValue === 'sourceURL' || head.fieldValue === 'wmsLayer'
+}" class="td-css" [ngClass]="{ 'status-col': head.fieldValue === 'status', 'action-col': head.fieldValue === 'action' }"  [ngStyle]="{'min-width': head.fieldValue === 'alertdate' ? '150px' : 'auto'}" >
+
+              @if (head.fieldValue === 'check')
+              {
+              <div *ngFor="let chk of item.check" class="d-inline-block me-2">
+                <mat-checkbox [(ngModel)]="chk.checked" color="primary">{{ chk.label }}</mat-checkbox>
+              </div>
+              }
+              @else if(head.fieldValue === 'button') {
+              <span *ngFor="let btn of item.button" class="me-2">
+                <button mat-icon-button [color]="getButtonColor(btn) || btn.color" (click)="GoToBtnAction(btn, item)"
+                  [matTooltip]="btn.label" [disabled]="btn.disabled">
+                  <mat-icon fontSet="material-icons-outlined" [color]="btn.color">{{ btn.icon || 'add' }}</mat-icon>
+                </button>
+              </span>
+              }
+              @else if(head.fieldValue === 'image') {
+              <img [src]="item[head.fieldValue]" />
+              }
+               @else if(head.fieldValue === 'location') {
+             <span class="flex item-center gap-2"> 
+              <img [src]="item.icon" /> {{ item[head.fieldValue]}}</span>
+              }
+               @else if(head.fieldValue === 'leadtime') {
+             <span class="flex item-center gap-2"> 
+              <img [src]="item.icon2" /> {{ item[head.fieldValue]}}</span>
+              }
+               @else if(head.fieldValue === 'details') {
+              <button
+      href="#"
+      class="view-details" >
+     View Details
+    </button>
+              }
+               @else if(head.fieldValue === 'risk') {
+              <span
+                [ngClass]="
+  item[head.fieldValue] === 'High'
+    ? 'bg-gray-950 text-white px-2 py-1 outline-black/10 rounded-[5px]'
+    : item[head.fieldValue] === 'Critical'
+    ? 'bg-rose-600 text-white px-2 py-1 outline-black/10  rounded-[5px]'
+    : 'outline outline-black/10 px-2 rounded-[5px]'
+"
+                disabled>
+                {{ item[head.fieldValue]}}
+               </span>
+              }
+              @else if(head.type === 'status') {
+              <badge
+                [ngClass]="item[head.fieldValue] === 'Online' ? 'bg-success text-white rounded px-2' : 'bg-danger text-white rounded px-2'" style="font-size: 10px;"
+                disabled>
+                {{ item[head.fieldValue]}}
+              </badge>
+              }
+              @else if(head.type === 'boolean') {
+              <badge
+                [ngClass]="item[head.fieldValue] ? 'bg-success text-white rounded px-2' : 'bg-secondary text-white rounded px-2'" style="font-size: 10px;"
+                disabled>
+                {{ item[head.fieldValue] }}
+              </badge>
+              }
+              @else if(head.fieldValue==='buttonlist') {
+                <div class="d-flex justify-content-center align-items-center">
+                 <span class="rounded-circle border border-white me-2" style="width: 9px;height: 9px;"  [ngClass]="item.isStatus === 4 ? 'bg-success' : item.isStatus === 1 ? 'bg-warning' : 'bg-primary'"></span>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button></div>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngFor="let btn of item.buttonlist" (click)="GoToBtnAction(btn, item)"
+                  [disabled]="btn.disabled">
+                  <mat-icon fontSet="material-icons-outlined">{{btn.icon}}</mat-icon>
+                  <span>{{btn.label}}</span>
+                </button>
+              </mat-menu>
+              }
+               @else if(head.fieldValue==='devices') {               
+               <span [ngClass]="item.isStatus === 4 ? 'text-success' : item.isStatus === 1 ? 'text-warning' : 'text-primary'">{{ item[head.fieldValue] }}  </span> 
+              }
+              @else if(head.fieldValue==='category') {               
+               <span [ngClass]="item.category === 'High' ? 'text-danger border-danger' : item.category === 'Medium' ? 'text-warning border-warning' : 'text-primary border-primary'" class="border px-2 rounded">{{ item[head.fieldValue] }}  </span> 
+              }
+             @else if (head.fieldValue === 'ticketid' || head.fieldValue === 'policyname') {               
+                  <span [matTooltip]="item[head.fieldValue]"> {{ item[head.fieldValue] }} </span> 
+              }
+
+              @else {
+              {{ item[head.fieldValue] }}
+              }
+            </td>
+           
+            <!-- <td *ngIf="item.type === 'control'">
+              <div *ngFor="let cntr of item.control" class="d-inline-block me-2">
+                <mat-checkbox *ngIf="cntr.type === 'check'" class="example-margin">
+                  {{ cntr.header }}
+                </mat-checkbox>
+              </div>
+            </td>
+
+            <td *ngIf="item.type !== 'control'">
+              {{ item.FieldName }}
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" *ngIf="pagination || pagination == undefined">
+          <app-cm-pagination [totalRecords]="totalRecords" [recordsPerPage]="perPage" [collectionSize]="collectionSize"
+            [totalPages]="totalPages" (pageno)="onPageChange($event)" (perPage)="onPageRecordsChange($event)"
+            [pageIndex]="activePage">
+          </app-cm-pagination>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

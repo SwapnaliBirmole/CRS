@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Weather } from '../../../models/weather';
 import { WeatherAuctionsTableItemComponent } from '../weather-auctions-table-item/weather-auctions-table-item.component';
+import { WeatherSample } from '../../../models/weather-sample';
 
 @Component({
   selector: '[weather-auctions-table]',
@@ -9,12 +9,18 @@ import { WeatherAuctionsTableItemComponent } from '../weather-auctions-table-ite
   imports: [WeatherAuctionsTableItemComponent],
 })
 export class WeatherAuctionsTableComponent implements OnInit {
-  public activeAuction: Weather[] = [];
+  public activeAuction: WeatherSample[] = [];
 
   constructor() {
     this.activeAuction = [
       {
         id: 1,
+          ward: 'string',
+  time: 'string',
+  risk: 'string',
+  rainfall: 'string',
+  icon: 'string',
+  icon2: 'string',
         title: 'Ward 1 - Maninagar',
         creator: '45mm',
         image:
@@ -27,8 +33,14 @@ export class WeatherAuctionsTableComponent implements OnInit {
       },
       {
         id: 1346772,
-        title: 'Lady Ape Club',
-        creator: 'Jenny Wilson',
+          ward: 'string',
+  time: 'string',
+  risk: 'string',
+  rainfall: 'string',
+  icon: 'string',
+  icon2: 'string',
+        title: 'Ward 1 - Maninagar',
+        creator: '45mm',
         image:
           'https://lh3.googleusercontent.com/k95IQpeYutx-lYXwgTZw0kXZl9GAkIOc4Yz3Dr06rndWphZ25kSWyF64aTqT3W4cOxz0eB5LfAss5i9WAR-ZPWVaifijsABLqzEYwHY=h500',
         avatar: 'https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-13.jpg',
@@ -39,8 +51,14 @@ export class WeatherAuctionsTableComponent implements OnInit {
       },
       {
         id: 1346780,
-        title: 'The King - Gordon Ryan',
-        creator: 'Jenny Wilson',
+          ward: 'string',
+  time: 'string',
+  risk: 'string',
+  rainfall: 'string',
+  icon: 'string',
+  icon2: 'string',
+        title: 'Ward 1 - Maninagar',
+        creator: '45mm',
         image:
           'https://lh3.googleusercontent.com/iYNxP1eXG3C6ujTY4REQ9rBea19Z46oKtKkaDS1XA-ED5iFhFmPrvQPzwx8ZwACydCS2wbZ7K1P89XIED3s8JRcT6Pn0M1-sMifeyQ=h500',
         avatar: 'https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-13.jpg',
@@ -51,8 +69,14 @@ export class WeatherAuctionsTableComponent implements OnInit {
       },
       {
         id: 1346792,
-        title: 'Only by Shvembldr',
-        creator: 'Jenny Wilson',
+          ward: 'string',
+  time: 'string',
+  risk: 'string',
+  rainfall: 'string',
+  icon: 'string',
+  icon2: 'string',
+        title: 'Ward 1 - Maninagar',
+        creator: '45mm',
         image:
           'https://lh3.googleusercontent.com/ujFwzDIXN64mJAHZwZ0OgNupowe5jlJPmV8OIrgSDjUAeb3SZRuhsuyPKAw6S2TkUknZvErVVKbzD-rEcs-augb6_LzUE5NVtPxj_w=h500',
         avatar: 'https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-13.jpg',
@@ -63,8 +87,14 @@ export class WeatherAuctionsTableComponent implements OnInit {
       },
       {
         id: 1346792,
-        title: 'Crypto Coven',
-        creator: 'Jenny Wilson',
+          ward: 'string',
+  time: 'string',
+  risk: 'string',
+  rainfall: 'string',
+  icon: 'string',
+  icon2: 'string',
+        title: 'Ward 1 - Maninagar',
+        creator: '45mm',
         image:
           'https://lh3.googleusercontent.com/pwjA4CWS9nto8fCis6JzlWwzQgtHUvLlUWcd501LsGQoVUPL5euwhir-2fjPmsJLJ_ovJ7flH_OgDEaALeZrhSXv8Puq85-lZYWuqto=h500',
         avatar: 'https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-13.jpg',

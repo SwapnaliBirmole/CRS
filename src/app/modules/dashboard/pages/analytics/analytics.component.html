@@ -1,0 +1,43 @@
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    
+    @for (item of widgetList; track item.title) {
+      <app-widget-card
+        [title]="item.title"
+        [mainValue]="item.mainValue"
+        [iconColor]="item.iconColor"
+        [cardColor]="item.cardColor"
+        [iconShadow]="item.iconShadow"
+        [progressPercent]="item.progressPercent"
+        [iconClass]="item.iconClass"
+        [trendValue]="item.trendValue"
+        [trendIcon]="item.trendIcon"
+        [trendColor]="item.trendColor"
+        [footerItems]="item.footerItems">
+      </app-widget-card>
+    }
+
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 mt-4">
+    <div class="col-span-2">
+    <app-forecast-chart></app-forecast-chart>
+    </div>
+    <div>
+<app-risk-chart></app-risk-chart>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-4 mt-4">
+    <div class="col-span-2">
+    <app-real-time></app-real-time>
+    </div>
+    <div>
+<app-district-details></app-district-details>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 mt-4">
+    
+    <app-active-alerts-chart></app-active-alerts-chart>
+    <app-active-alerts-list></app-active-alerts-list>
+   
+
+  </div>

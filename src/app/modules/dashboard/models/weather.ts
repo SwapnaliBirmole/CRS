@@ -1,11 +1,10 @@
 export interface Weather {
   id: number;
-  title: string;
-  last_bid?: number;
-  price: number;
-  creator?: string;
-  avatar?: string;
-  instant_price?: number;
-  ending_in?: string;
-  image: string;
+  location: string;
+  leadtime?: string;
+  risk?: string;
+  rainfall?: string;
+  icon?: string;
+  icon2?: string;
+  details:any;
 }

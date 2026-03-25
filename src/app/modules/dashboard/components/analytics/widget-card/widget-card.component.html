@@ -1,0 +1,48 @@
+<div class="stat-card" [style.background]="cardColor">
+  <!-- Top Section: Icon and Trend -->
+  <div class="card-header">
+    <div class="icon-box" [style.background]="iconColor" [style.boxShadow]="iconShadow">
+      <!-- <i [class]="iconClass"></i>- -->
+      <mat-icon fontSet="material-symbols-outlined">{{iconClass}}</mat-icon>
+     
+    </div>
+    
+    @if (trendValue) {
+      <div class="trend" [style.color]="trendColor">
+        
+        <svg-icon [src]="trendIcon"></svg-icon>
+        <span>{{ trendValue }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Content Section -->
+  <div class="card-body">
+    <h3 class="title">{{ title }}</h3>
+    <h1 class="main-value">{{ mainValue }}</h1>
+    
+    <!-- Dynamic Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" 
+           role="progressbar"
+           [style.width.%]="progressPercent" 
+           >
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  @if (footerItems && footerItems.length > 0) {
+    <div class="card-footer">
+      @for (item of footerItems; track item.label; let last = $last) {
+        <span class="footer-item">
+          <span class="val">{{ item.value }}</span> 
+          <span class="lbl">{{ item.label }}</span>
+        </span>
+        @if (!last) {
+          <span class="separator">•</span>
+        }
+      }
+    </div>
+  }
+</div>
