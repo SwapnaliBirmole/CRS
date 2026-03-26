@@ -1,19 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
 import { MaterialModule } from 'src/app/shared/Material.module';
-import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
-
+import { HighchartsChartComponent } from 'highcharts-angular';
 @Component({
   selector: 'app-risk-chart',
-  imports: [HighchartsChartModule, CommonModule,MaterialModule],
+  imports: [CommonModule,MaterialModule, HighchartsChartComponent,],
+  standalone:true,
   templateUrl: './risk-chart.component.html',
-  styleUrl: './risk-chart.component.css',
+  styleUrl: './risk-chart.component.css', 
 })
 export class RiskChartComponent implements OnInit, OnDestroy {
       @Input() zoneIds: number[] = [];
-      @Input() onlineCount: number = 0;
-      @Input() offlineCount: number = 0;
+      @Input() Flood: number = 30;
+      @Input() Heat: number = 40;
+      @Input() Storm: number = 40;
+      @Input() Other: number = 40;
       @Input() currentFilter: string = 'all';
       @Output() statusClicked = new EventEmitter<string>();
   @ViewChild('customLegend')
@@ -35,26 +37,54 @@ export class RiskChartComponent implements OnInit, OnDestroy {
         { "name": "Inactive", "y": 76, "color": "#98DDFF"},
     ]
 };
+
 Highcharts: typeof Highcharts = Highcharts;
 chartOptions?: Highcharts.Options;
 
- 
+//  chartOptions: Highcharts.Options = {
+//     chart: {
+//       type: 'pie'
+//     },
+//     title: {
+//       text: 'Simple Donut Chart'
+//     },
+//     plotOptions: {
+//       pie: {
+//         innerSize: '60%', // This creates the "hole" in the middle
+//         depth: 45         // Optional: adds depth if you use 3D
+//       }
+//     },
+//     series: [{
+//       name: 'Market Share',
+//       type: 'pie',
+//       data: [
+//         ['Chrome', 60],
+//         ['Edge', 20],
+//         ['Firefox', 10],
+//         ['Others', 10]
+//       ]
+//     }]
+//   };
+
+
 
   ngOnInit(): void {
-    this.initializeChart(this.onlineCount || 0, this.offlineCount || 0);
+   this.initializeChart(this.Flood || 0, this.Heat || 0 , this.Storm || 0, this.Other || 0);
   } 
    ngOnChanges(changes: SimpleChanges): void {
-     if (changes['onlineCount'] || changes['offlineCount']) {
-       this.initializeChart(this.onlineCount || 0, this.offlineCount || 0);
-     }
+    if ((changes['onlineCount'] || changes['offlineCount']) && !changes['onlineCount']?.isFirstChange()) {
+      this.initializeChart(this.Flood, this.Heat,this.Storm, this.Other);
+    }
   }
 
-  initializeChart(active: number, inactive: number) {
+  initializeChart(flood: number, heat: number, storm: number, other: number) {
     const self = this;
     this.legendData = [
-      { name: 'Active', y: active, color: '#13be03fa' },
-      { name: 'Inactive', y: inactive, color: '#f70101' },
-      { name: 'Total', y: active + inactive, color: '#0056b3' }
+      { name: 'Flood', y: flood, color: '#3B82F6' },
+      { name: 'Heat', y: heat, color: '#F59E0B' },
+      { name: 'Storm', y: storm, color: '#8B5CF6' },
+      { name: 'Other', y: other, color: '#6B7280' },
+     // { name: 'Total', y: flood + heat + storm + other, color: '#c70988' }
     ];
     this.chartOptions = {
       chart: {
@@ -74,7 +104,8 @@ chartOptions?: Highcharts.Options;
               (sum, point) => sum + (point.y ?? 0),
               0
             );
-            const text = `Total Devices<br><b>${total}</b>`;
+           // const text = `Total<br><b>${total}</b>`;
+            const text = ``;
 
             if (chart.customLabel) chart.customLabel.destroy();
 
@@ -167,8 +198,10 @@ chartOptions?: Highcharts.Options;
         innerSize: '70%',
         borderRadius: 0,
         data: [
-          { name: 'Active', y: active, color: '#13be03fa' },
-          { name: 'Inactive', y: inactive, color: '#f70101' }
+          { name: 'Flood', y: flood, color: '#3B82F6' },
+          { name: 'Heat', y: heat, color: '#F59E0B' },
+          { name: 'Storm', y: storm, color: '#8B5CF6' },
+          { name: 'Other', y: other, color: '#6B7280' }
         ]
       }] as Highcharts.SeriesOptionsType[]
     };}

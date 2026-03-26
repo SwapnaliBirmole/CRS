@@ -2,10 +2,6 @@
 
 @import 'tailwindcss';
 
-
-/** Plugins **/
-@import './assets/styles/apexchart.css';
-
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/aspect-ratio";

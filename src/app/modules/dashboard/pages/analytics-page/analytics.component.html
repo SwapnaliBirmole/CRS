@@ -31,13 +31,15 @@
     <app-real-time></app-real-time>
     </div>
     <div>
-<app-district-details></app-district-details>
+<app-district-details  [data]="currentDistrict" 
+  (viewReport)="handleReport($event)"></app-district-details>
     </div>
   </div>
   <div class="grid grid-cols-2 gap-4 mt-4">
     
     <app-active-alerts-chart></app-active-alerts-chart>
-    <app-active-alerts-list></app-active-alerts-list>
+    <app-active-alerts-list  [districtName]="'Ahmedabad'" 
+  [alerts]="alertsData"></app-active-alerts-list>
    
 
   </div>

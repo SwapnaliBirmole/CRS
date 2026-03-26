@@ -1,0 +1,173 @@
+.card-header,
+.card-header * {
+    box-sizing: border-box;
+}
+.card {
+background: rgba(255, 255, 255, 0.80);
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+gap: 21px;
+align-items: flex-start;
+justify-content: flex-start;
+height: 685.41px;
+position: relative;
+box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+overflow: hidden;
+}
+.card-header {
+background: linear-gradient(90deg, rgba(255, 247, 237, 1.00) 0%, rgba(255, 251, 235, 1.00) 50%, rgba(255, 247, 237, 1.00) 100%);
+border-style: solid;
+border-color: rgba(255, 237, 212, 0.50);
+border-width: 0px 0px 0.67px 0px;
+padding: 0px 0px 0.67px 0px;
+flex-shrink: 0;
+
+height: 91.67px;
+
+}
+
+.gujarat-map {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 587.44px;
+    height: 43.75px;
+    position: absolute;
+    left: 21px;
+    top: 21px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    gap: 10.5px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 264.06px;
+    height: 43.75px;
+    position: relative;
+}
+
+.gujarat-map2 {
+    background: linear-gradient(135deg, rgba(255, 105, 0, 1.00) 0%, rgba(225, 113, 0, 1.00) 100%);
+    border-radius: 11px;
+    padding: 7px 7px 0px 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 31.5px;
+    height: 31.5px;
+    position: relative;
+    box-shadow: 0px 4px 6px -4px rgba(255, 105, 0, 0.30), 0px 10px 15px -3px rgba(255, 105, 0, 0.30);
+}
+
+.icon {
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 17.5px;
+    position: relative;
+    overflow: visible;
+}
+
+.gujarat-map3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    height: 43.75px;
+    position: relative;
+}
+
+.container {
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 24.5px;
+    position: relative;
+}
+
+.gujarat-real-time-monitoring {
+    color: #0f172b;
+    text-align: left;
+    font-family: 'Inter-Bold', sans-serif;
+    font-size: 15.75px;
+    line-height: 24.5px;
+    font-weight: 700;
+    position: absolute;
+    left: 0px;
+    top: -1.67px;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: 17.5px;
+    position: relative;
+}
+
+.interactive-district-level-climate-data {
+    color: #45556c;
+    text-align: left;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 12.25px;
+    line-height: 17.5px;
+    font-weight: 400;
+    position: relative;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 73.63px;
+    height: 17.5px;
+    position: relative;
+}
+
+.badge {
+    background: linear-gradient(90deg, rgba(0, 201, 80, 1.00) 0%, rgba(0, 188, 125, 1.00) 100%);
+    border-radius: 5px;
+    flex: 1;
+    height: 17.5px;
+    position: relative;
+    box-shadow: 0px 4px 6px -4px rgba(0, 201, 80, 0.30), 0px 10px 15px -3px rgba(0, 201, 80, 0.30);
+    overflow: hidden;
+}
+
+.gujarat-map4 {
+    background: #ffffff;
+    border-radius: 22369600px;
+    opacity: 0.83;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    left: 7px;
+    top: 5.25px;
+}
+
+.live-data {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 10.5px;
+    line-height: 14px;
+    font-weight: 500;
+    position: absolute;
+    left: 22.75px;
+    top: 0.75px;
+}

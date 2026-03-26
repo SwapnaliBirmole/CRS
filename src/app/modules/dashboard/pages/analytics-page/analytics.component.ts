@@ -7,6 +7,8 @@ import { DistrictDetailsComponent } from "../../components/analytics/district-de
 import { ActiveAlertsChartComponent } from "../../components/analytics/active-alerts-chart/active-alerts-chart.component";
 import { ActiveAlertsListComponent } from "../../components/analytics/active-alerts-list/active-alerts-list.component";
 import { RiskChartComponent } from '../../components/analytics/risk-chart/risk-chart.component';
+import { AlertItem } from '../../models/alert.model';
+import { DistrictData } from '../../models/district.model.ts';
 // Define the interfaces here (or import them from a shared file)
 interface StatFooterItem {
   label: string;
@@ -26,6 +28,7 @@ interface StatCardData {
   trendIcon:string;
   trendColor:string;
 }
+
 @Component({
   selector: 'app-analytics',
   imports: [CommonModule, WidgetCardComponent, ForecastChartComponent, RealTimeComponent, DistrictDetailsComponent, ActiveAlertsChartComponent, ActiveAlertsListComponent, RiskChartComponent],
@@ -99,4 +102,22 @@ export class AnalyticsComponent {
     }
     // Add more objects here to automatically generate more cards
   ];
+
+currentDistrict: DistrictData = {
+  name: 'Ahmedabad',
+  riskLevel: 'HIGH',
+  activeAlerts: 8,
+  rainfall: { value: 145, unit: 'mm' },
+  temperature: { value: 42, unit: '°C' },
+  aqi: 156,
+  population: '8.4M'
+};
+alertsData: AlertItem[] = [
+  { id: 1, title: 'Flash Flood', location: 'Ward 42', timeAgo: '2 hours ago', status: 'Active', severityColor: '#ef4444' },
+  { id: 2, title: 'Heat Wave', location: 'Zone 3', timeAgo: '4 hours ago', status: 'Monitoring', severityColor: '#f97316' },
+  { id: 3, title: 'Air Quality Alert', location: 'Central', timeAgo: '6 hours ago', status: 'Resolved', severityColor: '#facc15' }
+];
+handleReport(cityName: string) {
+  console.log('Opening report for:', cityName);
+}
 }

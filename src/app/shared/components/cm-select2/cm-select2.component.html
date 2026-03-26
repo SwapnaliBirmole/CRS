@@ -1,0 +1,107 @@
+<!-- <div [formGroup]="formGroup">
+  <mat-label>{{settings.labelHeader}}</mat-label>
+
+
+  <mat-form-field style="padding-top: 10px; " [appearance]="settings.appearance || 'fill'"
+    [class]="settings.formFieldClass">
+    <input matInput aria-label="State" [matAutocomplete]="auto" [formControlName]="controlName"
+      [attr.disabled]="settings?.isDisabled ? true : null" />
+
+
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="ChangeSelection($event)">
+      @if(settings.options != undefined){
+      @for (state of filteredOptions | async; track state) {
+      <mat-option [value]="state">
+        <span>{{state.name}}</span>
+      </mat-option>
+      }
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-slide-toggle style="display: none;" [checked]="settings.isDisabled">
+  </mat-slide-toggle>
+</div> -->
+
+<!-- commented to add placeholder for dropdown-->
+<!-- <div [formGroup]="formGroup">
+<!-- commented to add placeholder for dropdown-->
+<!-- <div [formGroup]="formGroup">
+  <mat-label>{{settings.labelHeader}}</mat-label>
+  <mat-form-field [appearance]="settings.appearance || 'fill'" [class]="settings.formFieldClass">
+    <input matInput aria-label="State" [matAutocomplete]="auto" [formControlName]="controlName" (click)="onInputClick()"
+      [disabled]="!!formGroup.get(controlName)?.disabled" />
+
+    
+    <button mat-icon-button matSuffix disableRipple tabIndex="-1" style="margin-left: -8px;">
+      <mat-icon>{{ isPanelOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+    </button>
+
+   
+
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="ChangeSelection($event)">
+      @if(settings.options != undefined){
+      @for (state of filteredOptions | async; track state) {
+      <mat-option [value]="state">
+        <span>{{ state.name }}</span>
+      </mat-option>
+      }
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</div> -->
+
+<div [formGroup]="formGroup" class="d-flex flex-column">
+  <mat-label>{{settings.labelHeader}}</mat-label>
+  <mat-form-field [appearance]="settings.appearance || 'fill'" [class]="settings.formFieldClass">
+    <input matInput aria-label="State" [matAutocomplete]="auto" [formControlName]="controlName"
+      (click)="onInputClick(); autocompleteTrigger.openPanel()" [readonly]="true" placeholder="-- Select --"
+      [disabled]="!!formGroup.get(controlName)?.disabled" />
+
+    <!-- Arrow icon -->
+    <!-- <button mat-icon-button matSuffix disableRipple tabIndex="-1" (click)="autocompleteTrigger.openPanel()">
+      <mat-icon>{{ isPanelOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+    </button> -->
+
+    <button mat-icon-button matSuffix disableRipple tabIndex="-1"
+      (click)="!formGroup.get(controlName)?.disabled && autocompleteTrigger.openPanel()"
+      [disabled]="!!formGroup.get(controlName)?.disabled"
+      [attr.aria-disabled]="formGroup.get(controlName)?.disabled ? 'true' : 'false'">
+      <mat-icon>{{ isPanelOpen ? 'arrow_drop_down' : 'arrow_drop_down' }}</mat-icon>
+    </button>
+
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="ChangeSelection($event)">
+
+      <!-- Search box inside dropdown -->
+      <!-- <mat-option class="search-option">
+    <mat-icon>search</mat-icon>
+    <input matInput
+           placeholder="Type to search..."
+           [formControl]="searchControl"
+           (click)="$event.stopPropagation()"
+           style="border: 1px solid #ccc; border-radius: 4px; padding: 4px 8px; width: 100%;"/>
+  </mat-option> -->
+      <mat-option class="search-option ps-1 pe-1">
+        <mat-form-field><mat-icon matPrefix class="me-0 pe-0">search</mat-icon><input matInput
+            placeholder="Type to search..." [formControl]="searchControl"
+            (click)="$event.stopPropagation()"></mat-form-field>
+      </mat-option>
+      <!-- Filtered options -->
+
+      <ng-container *ngIf="filteredOptions | async as options">
+        <mat-option *ngFor="let state of options" [value]="state">
+          {{ state.name }}
+        </mat-option>
+      </ng-container>
+
+
+
+
+
+
+
+
+    </mat-autocomplete>
+
+  </mat-form-field>
+</div>

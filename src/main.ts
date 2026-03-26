@@ -1,11 +1,11 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app/app-routing.module';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideHighcharts } from 'highcharts-angular';
 
 if (environment.production) {
   enableProdMode();
@@ -20,6 +20,9 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(BrowserModule, AppRoutingModule),
     provideAnimations(),
     provideZonelessChangeDetection(),
+     provideHighcharts({
+      instance: () => import('highcharts')   // ✅ REQUIRED
+    })
   ],
 }).catch((err) => console.error(err));
 

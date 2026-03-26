@@ -1,0 +1,108 @@
+.card{border-radius: 11px;
+border: 0.667px solid rgba(0, 0, 0, 0.08);
+background: #FFF;
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);}
+
+.card-header{
+    display: flex;
+height: 57.75px;
+padding: 21px 21px 15.75px 21px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+background: linear-gradient(135deg, rgba(248, 250, 252, 1.00) 0%, rgba(241, 245, 249, 1.00) 100%);
+border-style: solid;
+border-color: rgba(0, 0, 0, 0.08);
+border-width: 0px 0px 0.67px 0px;
+padding: 0px 0px 0.67px 0px;
+}
+
+.content {
+  padding: 24px 20px;
+}
+
+.district-name {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: #1e293b;
+}
+
+.badge-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.risk-badge.high {
+  background: #fff1f0;
+  color: #ff4d4f;
+  border: 1px solid #ffccc7;
+}
+
+.alerts-badge {
+  background: #fff;
+  color: #000;
+  border: 1px solid #e2e8f0;
+}
+
+/* Metric Cards Base */
+.metric-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.metric-info label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.metric-info .value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Specific Card Styling */
+.rainfall { background-color: #f0f7ff; border: 1px solid #bae7ff; color: #003a8c; }
+.rainfall .trend-icon { color: #1890ff; }
+
+.temperature { background-color: #fff7e6; border: 1px solid #ffe7ba; color: #873800; }
+.temperature .trend-icon { color: #fa8c16; }
+
+.aqi { background-color: #f9f0ff; border: 1px solid #efdbff; color: #531dab; }
+.aqi .trend-icon { color: #722ed1; }
+
+.population { background-color: #f8fafc; border: 1px solid #e2e8f0; color: #1e293b; }
+.population .location-icon { color: #94a3b8; font-size: 20px; }
+
+/* Button */
+.btn-report {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1d61f2 0%, #0095c7 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-report:hover {
+  opacity: 0.9;
+}

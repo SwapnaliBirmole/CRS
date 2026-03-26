@@ -18,18 +18,19 @@ export class Menu {
           route: '/dashboard/analytics',
           // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
         },
-         {
-          icon: 'assets/icons/ai.svg',
-          label: 'AI Assistant',
-          route: '/dashboard/ai',
-          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
-        },
-         {
+        {
           icon: 'assets/icons/alerts.svg',
           label: 'Alerts',
           route: '/dashboard/alerts',
           // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
         },
+         {
+          icon: 'assets/icons/ai.svg',
+          label: 'AI Assistant',
+          route: '/dashboard/chat',
+          // children: [{ label: 'Nfts', route: '/dashboard/weathers' }],
+        },
+         
         // {
         //   icon: 'assets/icons/heroicons/outline/lock-closed.svg',
         //   label: 'Auth',

@@ -1,0 +1,87 @@
+.alert-card {
+  background: #fff;
+  border: 1px solid #e0e4e8;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .left-section {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+  }
+
+  .icon-container {
+    padding: 8px;
+    border-radius: 8px;
+    &.critical { background: #fee2e2; color: #ef4444; }
+  }
+
+  .title-area {
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      h2 { margin: 0; font-size: 1.25rem; color: #1e293b; }
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 0.9rem;
+      .meta-item { display: flex; align-items: center; gap: 4px; }
+    }
+  }
+
+  .badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    &.severity-badge { background: #e11d48; color: white; }
+    &.status-badge { background: #be123c; color: white; }
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-outline { background: white; border: 1px solid #d1d5db; }
+    .btn-solid { background: #020617; color: white; border: none; }
+  }
+
+  .divider { border: 0; border-top: 1px solid #f1f5f9; margin: 20px 0; }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .info-item {
+      label { font-size: 0.8rem; color: #94a3b8; display: block; margin-bottom: 4px; }
+      p { margin: 0; font-weight: 500; color: #0f172a; display: flex; align-items: center; gap: 5px; }
+      .link-text { color: #2563eb; cursor: pointer; }
+    }
+  }
+}
+
+.material-icons { font-size: 18px; }

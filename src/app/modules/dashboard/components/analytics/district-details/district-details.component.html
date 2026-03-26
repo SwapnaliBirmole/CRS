@@ -1,1 +1,71 @@
-<p>district-details works!</p>
+<div class="card">
+    <div class="card-header">
+    <div class="card-title flex gap-2">
+        <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_10_4854)">
+                <path d="M8.74992 16.0416C12.777 16.0416 16.0416 12.7771 16.0416 8.74998C16.0416 4.7229 12.777 1.45831 8.74992 1.45831C4.72284 1.45831 1.45825 4.7229 1.45825 8.74998C1.45825 12.7771 4.72284 16.0416 8.74992 16.0416Z" stroke="#45556C" stroke-width="1.45833" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.75 11.6667V8.75" stroke="#45556C" stroke-width="1.45833" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.75 5.83331H8.75729" stroke="#45556C" stroke-width="1.45833" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+                <clipPath id="clip0_10_4854">
+                    <rect width="17.5" height="17.5" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="district-details"> District Details </div>
+    </div>
+</div>
+<div class="card-body">
+ <div class="content">
+    <!-- Title & Badges -->
+    <h2 class="district-name">{{ data.name }}</h2>
+    <div class="badge-container">
+      <span class="badge risk-badge" [ngClass]="data.riskLevel.toLowerCase()">
+        {{ data.riskLevel }} RISK
+      </span>
+      <span class="badge alerts-badge">
+        ⚠️ {{ data.activeAlerts }} Active Alerts
+      </span>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="metric-card rainfall">
+      <div class="metric-info">
+        <label>Rainfall (24h)</label>
+        <div class="value">{{ data.rainfall.value }}{{ data.rainfall.unit }}</div>
+      </div>
+      <div class="trend-icon">📈</div>
+    </div>
+
+    <div class="metric-card temperature">
+      <div class="metric-info">
+        <label>Temperature</label>
+        <div class="value">{{ data.temperature.value }}{{ data.temperature.unit }}</div>
+      </div>
+      <div class="trend-icon">📈</div>
+    </div>
+
+    <div class="metric-card aqi">
+      <div class="metric-info">
+        <label>Air Quality Index</label>
+        <div class="value">{{ data.aqi }}</div>
+      </div>
+      <div class="trend-icon">📈</div>
+    </div>
+
+    <div class="metric-card population">
+      <div class="metric-info">
+        <label>Population</label>
+        <div class="value">{{ data.population }}</div>
+      </div>
+      <div class="location-icon">📍</div>
+    </div>
+
+    <!-- Action Button -->
+    <button class="btn-report" (click)="onViewReport()">
+      View Detailed Report
+    </button>
+  </div>
+</div>
+</div>
