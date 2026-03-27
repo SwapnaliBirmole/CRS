@@ -35,7 +35,8 @@
         <label>Rainfall (24h)</label>
         <div class="value">{{ data.rainfall.value }}{{ data.rainfall.unit }}</div>
       </div>
-      <div class="trend-icon">📈</div>
+      <div class="trend-icon"><mat-icon>trending_up</mat-icon></div>
+      
     </div>
 
     <div class="metric-card temperature">
@@ -43,7 +44,7 @@
         <label>Temperature</label>
         <div class="value">{{ data.temperature.value }}{{ data.temperature.unit }}</div>
       </div>
-      <div class="trend-icon">📈</div>
+       <div class="trend-icon"><mat-icon>trending_up</mat-icon></div>
     </div>
 
     <div class="metric-card aqi">
@@ -51,7 +52,7 @@
         <label>Air Quality Index</label>
         <div class="value">{{ data.aqi }}</div>
       </div>
-      <div class="trend-icon">📈</div>
+       <div class="trend-icon"><mat-icon>trending_up</mat-icon></div>
     </div>
 
     <div class="metric-card population">
@@ -59,7 +60,7 @@
         <label>Population</label>
         <div class="value">{{ data.population }}</div>
       </div>
-      <div class="location-icon">📍</div>
+       <div class="location-icon"><mat-icon fontSet="material-symbols-outlined">location_on</mat-icon></div>
     </div>
 
     <!-- Action Button -->

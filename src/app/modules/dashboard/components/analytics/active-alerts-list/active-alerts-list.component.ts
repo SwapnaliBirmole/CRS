@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertItem } from '../../../models/alert.model';
+import { AngularSvgIconModule } from "angular-svg-icon";
+import { MatIcon } from "@angular/material/icon";
 
 
 @Component({
   selector: 'app-active-alerts-list',
-  imports: [CommonModule],
+  imports: [CommonModule, AngularSvgIconModule, MatIcon],
   templateUrl: './active-alerts-list.component.html',
   styleUrl: './active-alerts-list.component.css',
 })

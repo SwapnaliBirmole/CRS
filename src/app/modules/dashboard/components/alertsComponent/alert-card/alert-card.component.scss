@@ -23,6 +23,8 @@
     padding: 8px;
     border-radius: 8px;
     &.critical { background: #fee2e2; color: #ef4444; }
+    &.high { background: #FFEDD4; color: #F54900; }
+    &.medium { background: #FEF9C2; color: #D08700; }
   }
 
   .title-area {
@@ -30,15 +32,16 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      h2 { margin: 0; font-size: 1.25rem; color: #1e293b; }
+      h2 { margin: 0; font-size: 15.75px; color: #0F172B; font-weight: 600;
+line-height: 24.5px;}
     }
 
     .meta-row {
       display: flex;
       gap: 15px;
       margin-top: 8px;
-      color: #64748b;
-      font-size: 0.9rem;
+      color: #45556C;
+     font-size: 12.25px;
       .meta-item { display: flex; align-items: center; gap: 4px; }
     }
   }
@@ -46,27 +49,31 @@
   .badge {
     padding: 2px 8px;
     border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    &.severity-badge { background: #e11d48; color: white; }
-    &.status-badge { background: #be123c; color: white; }
+   font-size: 10.5px;
+    font-weight: 500;
+    &.severity-badge {  
+    &.critical{background: #D4183D; color: white;}
+    &.high{background: #030213; color: white;}
+    &.medium{background: #ECEEF2; color: #030213;}
+    }
+    &.status-badge { background: #D4183D; color: white; }
   }
 
   .actions {
     display: flex;
     gap: 10px;
     button {
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+ display: flex;
+height: 28px;
+padding: 0 10.5px;
+justify-content: center;
+align-items: center;
+border-radius: 5px;font-size: 12.25px;
+
     }
-    .btn-outline { background: white; border: 1px solid #d1d5db; }
-    .btn-solid { background: #020617; color: white; border: none; }
+    .btn-outline { background: white; border: 1px solid #00000014; }
+    .btn-solid { background: #020617; color: white; border: none;}
+    .material-symbols-outlined{ font-size: 16px; margin-right: 2px;}
   }
 
   .divider { border: 0; border-top: 1px solid #f1f5f9; margin: 20px 0; }
@@ -74,12 +81,12 @@
   .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 
     .info-item {
-      label { font-size: 0.8rem; color: #94a3b8; display: block; margin-bottom: 4px; }
-      p { margin: 0; font-weight: 500; color: #0f172a; display: flex; align-items: center; gap: 5px; }
-      .link-text { color: #2563eb; cursor: pointer; }
+      label { font-size: 10.5px; color: #94a3b8; display: block; margin-bottom: 4px; }
+      p { margin: 0; font-weight: 500; color: #0f172a; display: flex; align-items: center; gap: 3px;font-size: 12.25px; }
+      .link-text { color: #2563eb; cursor: pointer;font-size: 12.25px; }
     }
   }
 }

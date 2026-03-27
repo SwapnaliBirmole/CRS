@@ -77,7 +77,7 @@ padding: 0px 0px 0.67px 0px;
 
 /* Specific Card Styling */
 .rainfall { background-color: #f0f7ff; border: 1px solid #bae7ff; color: #003a8c; }
-.rainfall .trend-icon { color: #1890ff; }
+.rainfall .trend-icon { fill: #1890ff; size: 44px;}
 
 .temperature { background-color: #fff7e6; border: 1px solid #ffe7ba; color: #873800; }
 .temperature .trend-icon { color: #fa8c16; }

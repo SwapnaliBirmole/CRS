@@ -1,0 +1,105 @@
+ 
+ 
+ <div class="card">
+<div class="card-header">
+
+    <h3 class="text-neutral-950 text-sm font-medium leading-4">Multi-Channel Alert Delivery</h3>
+    <div class="space-x-1 text-xs font-medium text-muted-foreground">
+      <p class="text-slate-500 text-sm font-normal leading-4">Real-time threshold-based alerts with automated SOP triggers and multi-channel notifications</p>
+    </div>
+
+  </div>
+  <div class="card-content">
+ <div class="flex gap-4 justify-between py-4">
+
+
+  <div 
+    *ngFor="let item of channels"
+    class="px-3.5 py-3.5  w-1/4 rounded-md outline outline-1 outline-black/10 flex flex-col gap-2.5"
+  >
+    <!-- Header -->
+    <div class="flex justify-between items-center">
+      
+      <!-- Icon Box -->
+      <div class="w-8 h-8 flex items-center justify-center rounded-md" [style.background]="item.iconBg">
+        <svg-icon [src]="item.src"></svg-icon>
+       
+      </div>
+
+      <!-- Status -->
+      <div class="px-1.5 py-0.5 rounded text-xs font-medium"
+           [ngClass]="{
+             'bg-green-50 text-green-700': item.statusColor === 'green',
+             'bg-red-50 text-red-700': item.statusColor === 'red',
+             'bg-yellow-50 text-yellow-700': item.statusColor === 'yellow'
+           }">
+        {{ item.status }}
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="text-slate-900 text-base font-semibold">
+      {{ item.name }}
+    </div>
+
+    <!-- Stats -->
+    <div class="flex flex-col gap-1.5 text-xs">
+      
+      <div class="flex justify-between">
+        <span class="text-slate-500">Sent Today:</span>
+        <span class="font-medium">{{ item.sent | number }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="text-slate-500">Delivered:</span>
+        <span class="font-medium"
+              [ngClass]="{'text-green-600': item.statusColor === 'green'}">
+          {{ item.delivered | number }}
+        </span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="text-slate-500">Success Rate:</span>
+        <span class="font-medium">{{ item.successRate }}</span>
+      </div>
+
+    </div>
+  </div>
+
+
+    
+  <!-- <div 
+    *ngFor="let card of AlertsCountCards"
+    class="bg-white rounded-xl border-l-4 border-r border-t border-b pl-5 py-5  pr-2 flex gap-[3.5px] items-center justify-between w-1/4"  [style.borderColor]="card.border"
+  >
+  <div class="flex-grow">
+   <div class="flex flex-row h-3.5 text-slate-500 text-xs font-normal font-['Inter'] leading-4" >
+    
+        {{ card.label }}
+     
+    </div>
+    <div class="flex flex-row h-7 text-left font-bold text-[21px] leading-7" [style.color]="card.color">
+      
+        {{ card.count }}
+    
+    </div>
+</div>
+<div class="flex-none" [style.color]="card.border"><mat-icon fontSet="material-symbols-outlined">{{card.icon}}warning</mat-icon></div>
+    
+  </div> -->
+</div>
+
+<div class="alert-channels">
+    <div class="flex gap-2">
+      <svg-icon src="assets/icons/blueWhatsApp.svg"></svg-icon>
+        <div class="container2">
+            <div class="paragraph">
+                <p class="text-blue-900 text-xs font-medium leading-4"> Departmental Standard Operating Procedures (SOP) Aligned </p>
+            </div>
+            <div class="paragraph">
+                <p> All alert channels are integrated with department-specific SOPs. When a threshold is triggered, relevant teams receive instant notifications with actionable guidance via their preferred communication channel. </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

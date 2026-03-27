@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from "angular-svg-icon";
 import { MaterialModule } from "src/app/shared/Material.module";
 import { TableFilterService } from 'src/app/modules/uikit/pages/table/services/table-filter.service';
+import { AlertPageHeaderComponent } from "../../components/alertsComponent/alert-page-header/alert-page-header.component";
+import { AlertCountCardsComponent } from "../../components/alertsComponent/alert-count-cards/alert-count-cards.component";
+import { AlertMultiChannelComponent } from "../../components/alertsComponent/alert-multi-channel/alert-multi-channel.component";
 
 
 @Component({
   selector: 'app-alerts-page',
-  imports: [AlertCardComponent, CommonModule, AngularSvgIconModule, MaterialModule,AngularSvgIconModule],
+  imports: [AlertCardComponent, CommonModule, AngularSvgIconModule, MaterialModule, AngularSvgIconModule, AlertPageHeaderComponent, AlertCountCardsComponent, AlertMultiChannelComponent],
   templateUrl: './alerts-page.component.html',
   styleUrl: './alerts-page.component.css',
 })

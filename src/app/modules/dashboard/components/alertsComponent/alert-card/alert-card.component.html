@@ -3,13 +3,13 @@
   <div class="header">
     <div class="left-section">
       <div class="icon-container" [ngClass]="alert.severity.toLowerCase()">
-        <span class="material-icons">report_problem</span>
+        <span class="material-symbols-outlined">report_problem</span>
       </div>
       
       <div class="title-area">
         <div class="title-row">
           <h2>{{ alert.title }}</h2>
-          <span class="badge severity-badge">{{ alert.severity }}</span>
+          <span class="badge severity-badge" [ngClass]="alert.severity.toLowerCase()">{{ alert.severity }}</span>
           <span class="badge status-badge">{{ alert.status }}</span>
         </div>
         
@@ -27,7 +27,7 @@
     <div class="actions">
       <button class="btn-outline" (click)="handleViewDetails()">View Details</button>
       <button class="btn-solid" (click)="handleNotify()">
-        <i class="material-icons">notifications</i> Notify
+        <i class="material-symbols-outlined">notifications</i> Notify
       </button>
     </div>
   </div>

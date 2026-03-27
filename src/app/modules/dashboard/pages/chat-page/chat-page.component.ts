@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChatPageHeaderComponent } from "../../components/chat-ai-component/chat-page-header/chat-page-header.component";
 
 @Component({
   selector: 'app-chat-page',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ChatPageHeaderComponent],
   templateUrl: './chat-page.component.html',
   styleUrl: './chat-page.component.css',
 })
