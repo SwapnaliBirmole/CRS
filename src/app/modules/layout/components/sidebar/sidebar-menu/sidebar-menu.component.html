@@ -21,7 +21,7 @@
             class="h-14 px-3.5 rounded-2xl inline-flex justify-start items-center gap-2.5 w-full">
             <!-- Icon -->
             <div [ngClass]="item.active && !menuService.showSideBar ? 'text-white' : 'w-8 h-8 px-1.5 pt-1.5 bg-orange-50 rounded-xl inline-flex flex-col justify-start items-start'">
-              <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
+              <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'" [ngClass]="item.active && !menuService.showSideBar ? 'stroke-white' : 'text-muted-foreground'"> </svg-icon>
             </div>
             <!-- Condition -->
             <ng-container

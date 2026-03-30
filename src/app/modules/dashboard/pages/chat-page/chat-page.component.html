@@ -1,51 +1,11 @@
 
 <app-chat-page-header></app-chat-page-header>
 
-<div class="chat-card">
-  <!-- Header Section -->
-  <header class="chat-header">
-    <div class="app-icon">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-3-9h6v2H9v-2zm-2 4h10v2H7v-2z" fill="white"/>
-      </svg>
-    </div>
-    <div class="header-info">
-      <h1>Chat with AI Assistant</h1>
-      <p>Ask about disaster response strategies</p>
-    </div>
-  </header>
-
-  <!-- Message Body -->
-  <main class="chat-body">
-    <div class="ai-response-group">
-      <div class="ai-message">
-        Hello! I'm your AI Disaster Management Assistant. I can help you with area-wise phased solutions for extreme heat, urban flooding, and air quality issues. How can I assist you today?
-      </div>
-      
-      <div class="suggestions">
-        <button (click)="onSuggestionClick('heat')">Show heat stress solutions for Ahmedabad</button>
-        <button (click)="onSuggestionClick('flood')">Flooding response plan for Ward 15</button>
-        <button (click)="onSuggestionClick('air')">Air quality improvement actions</button>
-      </div>
-      
-      <span class="timestamp">6:14:16 PM</span>
-    </div>
-  </main>
-
-  <!-- Footer Input Area -->
-  <footer class="chat-footer">
-    <div class="input-wrapper">
-      <input 
-        type="text" 
-        placeholder="Ask about disaster response strategies..."
-        [(ngModel)]="userInput"
-        (keyup.enter)="sendMessage()"
-      >
-      <button class="send-button" (click)="sendMessage()">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="white"/>
-        </svg>
-      </button>
-    </div>
-  </footer>
+<div class="flex gap-4">
+<div class="flex-1">
+  <app-chat-window></app-chat-window>
+</div>
+<div class="flex-none w-[250px]">
+  <app-chat-page-sidebar></app-chat-page-sidebar>
+</div>
 </div>

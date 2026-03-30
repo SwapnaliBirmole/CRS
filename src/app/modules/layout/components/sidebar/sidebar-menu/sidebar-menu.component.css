@@ -4,3 +4,7 @@ background: linear-gradient(90deg, #FF6900 0%, #FE9A00 100%);
 box-shadow: 0 10px 15px -3px rgba(255, 105, 0, 0.30), 0 4px 6px -4px rgba(255, 105, 0, 0.30);
 color: var(--color-white);
 }
+
+.stroke-white path{
+    stroke: var(--color-white);
+}

@@ -10,7 +10,7 @@
         <div class="flex items-start gap-2">
           <a
             (click)="toggleSidebar()"
-            class="bg-primary flex cursor-pointer items-center justify-center ">
+            class="flex cursor-pointer items-center justify-center ">
             <img src="assets/icons/logo-CRS.png"/> 
           </a>
           <div class="flex flex-col">
@@ -31,7 +31,7 @@
 
     <!-- Menu Items -->
     <div
-      class="scrollbar-thumb--sm scrollbar-track-rounded scrollbar-thin scrollbar-track-transparent scrollbar-thumb-card h-full overflow-auto px-4">
+      class="scrollbar-thumb--sm scrollbar-track-rounded scrollbar-thin scrollbar-track-transparent scrollbar-thumb-card h-full overflow-auto" [ngClass]="menuService.showSideBar ? 'px-4' : 'px-2 svg-white'">
       <app-sidebar-menu></app-sidebar-menu>
       <app-system-info *ngIf="menuService.showSideBar"></app-system-info>
     </div>

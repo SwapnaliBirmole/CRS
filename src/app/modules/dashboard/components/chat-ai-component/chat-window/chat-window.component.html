@@ -1,0 +1,44 @@
+<div class="chat-card w-full">
+  <!-- Header Section -->
+  <header class="chat-header">
+    <div class="app-icon">
+      <svg-icon width="40" height="40" src="assets/icons/chatAi.svg"></svg-icon>
+    </div>
+    <div class="header-info">
+      <h1>Chat with AI Assistant</h1>
+      <p>Ask about disaster response strategies</p>
+    </div>
+  </header>
+
+  <!-- Message Body -->
+  <main class="chat-body">
+    <div class="ai-response-group">
+      <div class="ai-message">
+        Hello! I'm your AI Disaster Management Assistant. I can help you with area-wise phased solutions for extreme heat, urban flooding, and air quality issues. How can I assist you today?
+      </div>
+      
+      <div class="suggestions">
+        <button (click)="onSuggestionClick('heat')">Show heat stress solutions for Ahmedabad</button>
+        <button (click)="onSuggestionClick('flood')">Flooding response plan for Ward 15</button>
+        <button (click)="onSuggestionClick('air')">Air quality improvement actions</button>
+      </div>
+      
+      <span class="timestamp">6:14:16 PM</span>
+    </div>
+  </main>
+
+  <!-- Footer Input Area -->
+  <footer class="chat-footer">
+    <div class="input-wrapper">
+      <input 
+        type="text" 
+        placeholder="Ask about disaster response strategies..."
+        [(ngModel)]="userInput"
+        (keyup.enter)="sendMessage()"
+      >
+      <button class="send-button text-white " (click)="sendMessage()">
+        <mat-icon fontSet="material-symbols-outlined" class="rotate-330"> send </mat-icon>
+      </button>
+    </div>
+  </footer>
+</div>
